@@ -54,6 +54,6 @@
   "homepage": "https://github.com/diogojorgebasso/Programmers-to-job#readme",
   "main": "index.js",
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Diogo Basso",
+  "license": "Apache 2"
 }
