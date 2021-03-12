@@ -14,6 +14,7 @@ const mercadoFin = axios.create({
 });
 
 const extraPhrases = axios.create({
-  baseURL: "localhost:4000/functions", //for local env
+  baseURL: "https://us-central1-diogobasso-site.cloudfunctions.net/frases",
+  //baseURL: "localhost:4000/functions",for local env
 });
 export { frase, nameAge, mercadoFin, extraPhrases };

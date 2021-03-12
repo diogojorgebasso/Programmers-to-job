@@ -1,13 +1,11 @@
-//In ordder for firebase work.
+//In order for firebase work.
 const functions = require("firebase-functions");
-const admin = require("firebase-admin");
-admin.initializeApp();
 
 const enviando = require("node-fetch"),
   slugify = require("slugify"),
   cheerio = require("cheerio"),
-  iconv = require("iconv-lite");
-cors = require("cors")({ origin: true });
+  iconv = require("iconv-lite"),
+  cors = require("cors")({ origin: true });
 
 const scrapePhrases = async (personagem) => {
   const baseUrl = "https://www.pensador.com/";
