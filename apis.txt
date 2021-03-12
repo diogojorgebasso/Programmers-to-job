@@ -1,0 +1,12 @@
+APIS:
+https://api.agify.io/?name=diogo&country_id=BR
+http://api.quotable.io/random
+https://spaceflightnewsapi.net/api/v2/articles?_limit=1
+https://sentim-api.herokuapp.com/
+https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ensinu.com.br
+https://documentation.image-charts.com/
+https://foodish-api.herokuapp.com/api/
+https://date.nager.at/api/v2/PublicHolidays/2021/BR
+https://www.mercadobitcoin.net/api/BTC/trades
+
+https://web.dev/add-manifest/
