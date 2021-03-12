@@ -13,4 +13,7 @@ const mercadoFin = axios.create({
   baseURL: "https://mercadobitcoin.net/api/BTC/trades",
 });
 
-export { frase, nameAge, mercadoFin };
+const extraPhrases = axios.create({
+  baseURL: "localhost:4000/functions", //for local env
+});
+export { frase, nameAge, mercadoFin, extraPhrases };

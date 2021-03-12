@@ -10,3 +10,6 @@ https://date.nager.at/api/v2/PublicHolidays/2021/BR
 https://www.mercadobitcoin.net/api/BTC/trades
 
 https://web.dev/add-manifest/
+
+
+https://dillinger.io/ for readme
