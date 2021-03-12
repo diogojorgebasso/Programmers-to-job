@@ -61,7 +61,7 @@ const scrapePhrases = async (personagem) => {
 
 exports.frases = functions.https.onRequest((request, response) => {
   cors(request, response, async () => {
-    const body = JSON.parse(request.body);
+    const body = request.body;
     const frasesDoPensador = await scrapePhrases(body.text);
     response.send(frasesDoPensador);
   });

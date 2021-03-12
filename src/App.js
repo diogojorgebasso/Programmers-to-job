@@ -1,10 +1,13 @@
 import "./App.css";
-import { frase, nameAge, extraPhrases } from "./services/api";
-import { useEffect, useState } from "react";
+import { frase, nameAge, extraPhrases, location } from "./services/api";
+import { useEffect, useState, useMemo } from "react";
 import Graph from "./services/Graph";
 
 function App() {
   const [Frase, setFrase] = useState();
+  const [FraseEscolhida, setFraseEscolhida] = useState();
+  const [Location, setLocation] = useState();
+
   const [author, setAuthor] = useState();
   const [Name, setName] = useState("");
   const [Age, setAge] = useState();
@@ -26,9 +29,20 @@ function App() {
       });
   }, []);
 
+  function fetchLocation() {
+    location
+      .get()
+      .then((res) => {
+        setLocation(res.data);
+      })
+      .catch((err) => console.error(err));
+  }
+
+  useMemo(() => fetchLocation(), []); //FIXME: its not working
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    nameAge(Name)
+    nameAge(Name, Location)
       .get()
       .then((res) => {
         setAge(res.data.age);
@@ -41,8 +55,11 @@ function App() {
     extraPhrases
       .post("/", { text: Personagem })
       .then((res) => {
-        setAge(res.data.age);
         console.log(res);
+        let frases = [];
+        res.data.forEach((frase) => frases.push(frase));
+
+        setFraseEscolhida(frases);
       })
       .catch((err) => console.error(err));
   };
@@ -73,6 +90,7 @@ function App() {
         id="fraseExtra"
         type="text"
         onChange={(event) => setPersonagem(event.target.value)}
+        required
       />
       <button onClick={handlePhrase}>Enviar</button>
     </div>
