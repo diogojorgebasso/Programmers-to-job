@@ -1,7 +1,11 @@
 {
-  "name": "diogobasso",
+  "name": "magicAPI",
   "version": "1.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogojorgebasso/Programmers-to-job.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -39,5 +43,14 @@
   },
   "devDependencies": {
     "standard-version": "^9.1.1"
-  }
+  },
+  "description": "🔎 Personal project to **connect** programmers with small businesses or ONG's to create rapport and revolutionize the way to hire professionals! 🚀",
+  "bugs": {
+    "url": "https://github.com/diogojorgebasso/Programmers-to-job/issues"
+  },
+  "homepage": "https://github.com/diogojorgebasso/Programmers-to-job#readme",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
