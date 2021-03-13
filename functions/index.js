@@ -18,7 +18,7 @@ const scrapePhrases = async (personagem) => {
   let contentPage = await fetchPage(searchTerm);
   let result = await extract(contentPage);
 
-  return result.phrases;
+  return result.phrases.splice(0, 3);
 
   async function fetchPage(searchTerm) {
     return new Promise((resolve, reject) => {
@@ -42,9 +42,11 @@ const scrapePhrases = async (personagem) => {
             author: $(this).find("a").first().text(),
             text: $(this).find("p").first().text().replace(/\n/g, ""),
           });
+          if (i === 3) {
+            return false;
+          }
         });
-        phrases = phrases.splice(0, 3);
-        resolve({ phrases, next });
+        resolve({ phrases });
       } catch (err) {
         reject(err);
       }
