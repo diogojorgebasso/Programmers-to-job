@@ -23,5 +23,15 @@ const newPhrase = axios.create({
 const locationClient = axios.create({
   baseURL: "https://ipapi.co/country_code/",
 });
+const RocketNews = axios.create({
+  baseURL: "https://spaceflightnewsapi.net/api/v2/articles?_limit=4",
+});
 
-export { fraseInicial, nameAge, mercadoFin, newPhrase, locationClient };
+export {
+  fraseInicial,
+  RocketNews,
+  nameAge,
+  mercadoFin,
+  newPhrase,
+  locationClient,
+};

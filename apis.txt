@@ -1,7 +1,7 @@
 APIS:
 https://api.agify.io/?name=diogo&country_id=BR (OK)
 http://api.quotable.io/random (OK)
-https://spaceflightnewsapi.net/api/v2/articles?_limit=1
+https://spaceflightnewsapi.net/api/v2/articles?_limit=4
 https://sentim-api.herokuapp.com/
 https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ensinu.com.br
 https://documentation.image-charts.com/

@@ -17,7 +17,7 @@ const app = firebase.initializeApp({
 // Initialize Firebase
 export const analytics = firebase.analytics(); //Done!
 export const auth = app.auth();
-const perf = firebase.performance(); //Done!
+firebase.performance(); //Done!
 export const remoteConfig = firebase.remoteConfig();
 const firestore = app.firestore();
 export const database = {

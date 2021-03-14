@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
   }
 
   function resetPassword(email) {
-    analytics.setUserProperties({ esquecido: "sim" });
+    analytics.setUserProperties({ forgotten: "sim" });
     return auth.sendPasswordResetEmail(email);
   }
 

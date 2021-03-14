@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "./logo__header.png";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
@@ -17,8 +17,10 @@ export default function Header() {
       />
 
       <Navbar.Brand as={Link} to="/">
-        Diogo Basso
-        <span>API mágica</span>
+        <div className="headerOption">
+          Diogo Basso
+          <span>API mágica</span>
+        </div>
       </Navbar.Brand>
       <Nav.Link as={Link} to="/perfil">
         Perfil
