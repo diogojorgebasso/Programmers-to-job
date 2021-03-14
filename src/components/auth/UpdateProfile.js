@@ -32,7 +32,7 @@ export default function UpdateProfile() {
         history.push("/");
       })
       .catch(() => {
-        setError("Failed to update account");
+        setError("Erro em atualizar a conta. Por favor, tente novamente.");
       })
       .finally(() => {
         setLoading(false);
@@ -60,7 +60,7 @@ export default function UpdateProfile() {
               <Form.Control
                 type="password"
                 ref={passwordRef}
-                placeholder="Leave blank to keep the same"
+                placeholder="Deixe em branco para manter a mesma"
               />
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">

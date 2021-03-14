@@ -3,11 +3,11 @@ import InitialPhrase from "./InitialPhrase";
 import Graph from "../../services/Graph";
 import Name from "./Name";
 import NewPhrase from "./NewPhrase";
-import NavBar from "./NavBar";
+import Header from "./Header";
 export default function Dashboard() {
   return (
     <div className="Dashboard">
-      <NavBar></NavBar>
+      <Header></Header>
       <InitialPhrase></InitialPhrase>
       <Graph></Graph>
       <Name></Name>

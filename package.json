@@ -7,10 +7,10 @@
     "url": "git+https://github.com/diogojorgebasso/Programmers-to-job.git"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
     "firebase": "^8.3.0",
     "firebase-admin": "^9.5.0",
     "firebase-functions": "^3.13.2",
@@ -21,7 +21,6 @@
     "react-scripts": "4.0.3",
     "react-vis": "^1.11.7",
     "semver": "^7.3.4",
-    "styled-components": "^5.2.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

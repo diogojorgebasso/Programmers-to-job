@@ -1,13 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { fraseInicial } from "../../services/api";
-import styled from "styled-components";
-
-const FraseStyle = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
+import "./initialPhrase.css";
 
 export default function InitialPhrase() {
   const [Frase, setFrase] = useState("");
@@ -31,9 +25,9 @@ export default function InitialPhrase() {
 
   return (
     <div>
-      <FraseStyle>
+      <h2>
         <q>{Frase}</q>
-      </FraseStyle>
+      </h2>
       <cite>{Author}</cite>
     </div>
   );

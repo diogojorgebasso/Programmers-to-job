@@ -3,6 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import CenteredContainer from "./CenteredContainer";
+import { database } from "../../firebase";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -19,6 +20,11 @@ export default function Signup() {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      await database.users.add({
+        email: emailRef.current.value,
+        password: passwordRef.current.value,
+        timeStamp: database.getTime(),
+      });
       history.push("/");
     } catch {
       setError("Failed to create an account");

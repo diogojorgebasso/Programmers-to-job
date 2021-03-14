@@ -1,3 +1,4 @@
+/*
 import { BackgroundSyncPlugin } from "workbox-background-sync";
 import { registerRoute } from "workbox-routing";
 import { NetworkOnly } from "workbox-strategies";
@@ -13,3 +14,4 @@ registerRoute(
   }),
   "POST"
 );
+*/
