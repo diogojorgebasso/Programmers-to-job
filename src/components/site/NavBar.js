@@ -1,14 +1,15 @@
-import React from "react";
-import logo from "../../public/logo512.png";
-import Link from "react-router-dom";
+import React, { useState } from "react";
+import logo from "./logo__header.png";
+import { Link, Prompt } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import "./NavBar.css";
+
 export default function NavBar() {
   const { currentUser, logout } = useAuth();
-
   return (
-    <div className="NavBar">
+    <div className="navbar">
       <Link to="/">
-        <img className="headerLogo" src={logo} alt="Diogo Logo" />
+        <img className="header__logo" src={logo} alt="Diogo Logo" />
       </Link>
       <div className="headerLocation">
         <div className="headerOption">
@@ -22,7 +23,8 @@ export default function NavBar() {
             <span className="HeaderTextUp">
               Hello {!currentUser ? "Guest" : currentUser.email}
             </span>
-            <span className="HeaderTextDown">
+            <Prompt when={!!logout} message="Are you sure?" />
+            <span onClick={logout} className="HeaderTextDown">
               {currentUser ? "Sign Out" : "Sign In"}
             </span>
           </div>
