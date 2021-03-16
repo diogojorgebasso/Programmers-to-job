@@ -1,0 +1,53 @@
+const fetch = require("node-fetch"),
+  slugify = require("slugify"),
+  cheerio = require("cheerio"),
+  iconv = require("iconv-lite");
+
+async function scrape(personagem) {
+  const baseUrl = "https://www.pensador.com/";
+  const searchTerm = slugify(personagem, {
+    replacement: "_",
+    remove: /[*+~.()'"!:@]/g,
+    lower: true,
+  });
+
+  let contentPage = await fetchPage(searchTerm);
+  let result = await extract(contentPage);
+
+  return result.phrases.splice(0, 3);
+
+  async function fetchPage(searchTerm) {
+    return new Promise((resolve, reject) => {
+      fetch(`${baseUrl}/${searchTerm}`)
+        .then((res) => res.arrayBuffer())
+        .then((arrayBuffer) =>
+          iconv.decode(Buffer.from(arrayBuffer), "utf-8").toString()
+        )
+        .then((body) => resolve(body))
+        .catch((err) => reject(err));
+    });
+  }
+
+  async function extract(htmlContent) {
+    return new Promise((resolve, reject) => {
+      try {
+        let phrases = [];
+        const $ = cheerio.load(htmlContent);
+        $(".thought-card").each(function (i, e) {
+          phrases.push({
+            author: $(this).find("a").first().text(),
+            text: $(this).find("p").first().text().replace(/\n/g, ""),
+          });
+          if (i === 3) {
+            return false;
+          }
+        });
+        resolve({ phrases });
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+}
+
+module.exports = scrape;

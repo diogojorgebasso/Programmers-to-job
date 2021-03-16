@@ -5,6 +5,7 @@ import "firebase/firestore";
 import "firebase/remote-config";
 import "firebase/auth";
 import "firebase/performance";
+
 const app = firebase.initializeApp({
   apiKey: "AIzaSyDveLdtFIYdPbbSltuUNgC9ED2dGIfu_o8",
   authDomain: "diogobasso-site.firebaseapp.com",

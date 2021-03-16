@@ -10,6 +10,8 @@ export default function Dashboard() {
   return (
     <div className="Dashboard">
       <Header></Header>
+      <h1>Ajudando desenvolvdores a amar API’s🔥!</h1>
+
       <Toast></Toast>
       <InitialPhrase></InitialPhrase>
       <Graph></Graph>

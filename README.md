@@ -6,3 +6,4 @@ TODO:
 
 - make the graph
 - blog site
+- usuário pago
