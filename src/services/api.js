@@ -7,7 +7,9 @@ const fraseInicial = axios.create({
 function nameAge(name, location) {
   console.log(location);
   return axios.create({
-    baseURL: `https://api.agify.io/?name=${name}&country_id=${location}`,
+    baseURL: `https://api.agify.io/?name=${name}${
+      typeof location !== undefined ? "&country_id=" + location : ""
+    }`,
   });
 }
 

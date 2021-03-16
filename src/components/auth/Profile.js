@@ -29,9 +29,14 @@ export default function Profile() {
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Perfil</h2>
+          <h3>Oferta especial: Seja usuário PRO!</h3>
+          <Link to="/payment" className="btn btn-primary w-100 mt-3">
+            <button>Clique aqui</button>
+          </Link>
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email:</strong> {currentUser?.email}
-          <strong>Log de segurança</strong>{currentUser.}
+          <strong>Log de segurança</strong>
+          {currentUser?.lastLogin.map((login) => console.log(login))}
           <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
             Atualizar perfil
           </Link>

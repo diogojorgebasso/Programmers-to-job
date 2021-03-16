@@ -14,8 +14,9 @@ import Dashboard from "./components/site/Dashboard";
 import Contato from "./components/site/Contato";
 import Payment from "./components/site/Payment";
 import PrivacyPolice from "./components/site/PrivacyPolice";
-import Tof from "./components/site/TOF";
-
+import Tof from "./components/site/Tof";
+import Thanks from "./components/site/Thanks";
+import NoMatch from "./components/site/NoMatch";
 export default function App() {
   return (
     <div className="App">
@@ -37,8 +38,10 @@ export default function App() {
               <Route path="/perfil" component={Profile} />
               <Route path="/politica-privacidade" component={PrivacyPolice} />
               <Route path="/tof" component={Tof} />
-
-              <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="/pagamento" component={Payment} />
+              <Route path="/pagamento/Thanks" component={Thanks} />
+              <Route path="/forgot-password" component={ForgotPassword} />{" "}
+              <Route path="*" component={NoMatch} />
             </Switch>
           </FlagsProvider>
         </AuthProvider>
